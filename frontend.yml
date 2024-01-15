@@ -19,7 +19,7 @@
 
     - name: download frontend code
       ansible.builtin.get_url:
-        url: https://expense-artifacts.s3.amazonaws.com/$frontend.zip
+        url: https://expense-artifacts.s3.amazonaws.com/frontend.zip
         dest: /tmp/frontend.zip
 
 #   - name: extract the frontend code
