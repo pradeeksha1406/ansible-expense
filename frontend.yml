@@ -1,5 +1,6 @@
 - name: frontend
   hosts: all
+  become
   tasks:
     - name: Installing nginx
       ansible.builtin.dnf:
@@ -21,8 +22,9 @@
         url: https://expense-artifacts.s3.amazonaws.com/$frontend.zip
         dest: /tmp/frontend.zip
 
-    - name: extract the frontend code
+    #- name: extract the frontend code
 
 
-    - name: starting nginx
+
+    #- name: starting nginx
 
