@@ -4,7 +4,7 @@
   tasks:
     - name: removing 8 version of sql
       ansible.builtin.package:
-        name: mysql
+        name: mysql-common.x86_64
         state: absent
 
     - name: Copy repo file
