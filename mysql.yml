@@ -2,8 +2,8 @@
   hosts: all
   become: yes
   tasks:
-    - name: Disable 8 version of sql
-      ansible.builtin.dnf:
+    - name: removing 8 version of sql
+      ansible.builtin.package:
         name: mysql
         state: absent
 
