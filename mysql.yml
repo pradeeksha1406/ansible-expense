@@ -2,10 +2,8 @@
   hosts: all
   become: yes
   tasks:
-    - name: Disable old version of sql
-      ansible.builtin.dnf:
-        name: mysql
-        state: absent
+    - name: Disable 8 version of sql
+      ansible.builtin.shell: dnf module disable mysql -y
         
     - name: Copy repo file
       ansible.builtin.copy:
