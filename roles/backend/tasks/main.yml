@@ -7,9 +7,11 @@
 
 - name: disable existing nodejs
   ansible.builtin.shell: dnf module disable nodejs -y
+  when: npm.rc !=0
 
 - name: Enable nodejs
   ansible.builtin.shell: dnf module enable nodejs:18 -y
+  when: npm.rc !=0
 
 - name: Installing NodeJs
   ansible.builtin.dnf:
