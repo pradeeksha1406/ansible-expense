@@ -22,7 +22,7 @@
 #    when: npm.rc !=0
 
 - name: copy backend service
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: backend.service
     dest: /etc/systemd/system/backend.service
 
@@ -53,7 +53,7 @@
   ansible.builtin.dnf:
     name: mysql
 - name: load the schema
-  ansible.builtin.shell: mysql -h 44.204.15.24 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+  ansible.builtin.shell: mysql -h {{ lookup('aws_ssm', 'expense.backend.DB_HOST', region='us-east-1' ) }} -uroot -p{{ lookup('aws_ssm', 'expense.backend.DB_PASS', region='us-east-1' ) }} < /app/schema/backend.sql
 - name: starting backed service
   ansible.builtin.systemd:
     name: backend
