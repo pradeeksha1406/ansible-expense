@@ -10,7 +10,7 @@
 
 - name: Installing mysql
   ansible.builtin.dnf:
-    name: mysql-community-server
+    name: MySQL 5.7 Community Server
     state: present
 
 - name: Start mysql
