@@ -1,6 +1,8 @@
 #- name: verify nodejs
 #  ansible.builtin.shell: type npm
 #  register: npm
+#  ignore_errors: yes
+
 #- name: Read npm
 #  ansible.builtin.debug:
 #    msg: "{{ npm }}"
