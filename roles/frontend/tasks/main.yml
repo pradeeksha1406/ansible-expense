@@ -11,6 +11,11 @@
     src: expense.conf
     dest: /etc/nginx/default.d/expense.conf
 
+- name: Updating nginx conif
+  ansible.builtin.template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
 - name: removing default frontend code
   ansible.builtin.file:
     path: /usr/share/nginx/html
