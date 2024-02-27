@@ -6,6 +6,8 @@
 #- name: Read npm
 #  ansible.builtin.debug:
 #    msg: "{{ npm }}"
+- name: Set Hostname
+  ansible.builtin.shell: set-hostname backend
 
 - name: disable existing nodejs
   ansible.builtin.shell: dnf module disable nodejs -y
