@@ -36,3 +36,8 @@
     name: nginx
     state: restarted
     enabled: yes
+
+- name: Install filebeat
+  ansible.builtin.import_role:
+    name: common
+    task_from: filebeat

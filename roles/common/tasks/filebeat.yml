@@ -1,0 +1,6 @@
+- name: Clone infra ansible repo
+  ansible.builtin.git:
+    repo: https://github.com/pradeeksha1406/infra-ansible.git
+    dest: /tmp/infra-ansible
+
+- name:
